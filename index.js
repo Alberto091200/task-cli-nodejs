@@ -3,6 +3,20 @@
 const args = process.argv
 const command = args[2]
 
+
+const fs = require('fs')
+fs.readFile('./data.json', 'utf8', (err, data) => {
+	if (err){
+		console.error('Error al leer el archivo data.json')
+		return
+	}
+	const task = JSON.parse(data)
+	console.log(task)
+})
+
+
+
+
 function main() {
 	switch (command) {
 		case '--help':
@@ -14,7 +28,40 @@ function main() {
 			showVersion()
 			break
 
-		// AQUÍ TU CÓDIGO PARA PROCESAR OTROS COMANDOS
+		case '--gettask':
+		case 'g':
+			getTasks()
+			break
+
+		case '--gettaskbyid':
+			case 'gid':
+			getTaskById()
+			break
+
+		case '--savedata':
+			case 's':
+				saveData()
+				break
+
+		case '--createtask':
+		case 'cr':
+			createTask()
+			break
+
+		case '--updatetask':
+		case 'up':
+			updateTask()
+			break
+				
+		case '--deletetask':
+			case 'del':
+			deleteTask()
+			break
+
+		case '--cleartask':
+			case 'cl':
+			clearTasks()
+			break
 
 		default:
 			console.log(args)
@@ -41,29 +88,29 @@ function showVersion() {
 }
 
 function getTasks() {
-	// AQUI TU CÓDIGO
+	console.log('GetTask')
 }
 
 function getTaskById(id) {
-	// AQUI TU CÓDIGO
+	console.log('getTaskById')
 }
 
 function saveData(newData) {
-	// AQUI TU CÓDIGO
+	console.log('saveData')
 }
 
 function createTask(body) {
-	// AQUÍ TU CÓDIGO
+	console.log('createTask')
 }
 
 function updateTask(id, body) {
-	// AQUI TU CÓDIGO
+	console.log('updateTask')
 }
 
 function deleteTask(id) {
-	//AQUÍ TU CÓDIGO
+	console.log('deleteTask')
 }
 
 function clearTasks() {
-	//AQUÍ TU CÓDIGO
+	console.log('clearTasks')
 }

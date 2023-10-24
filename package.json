@@ -1,7 +1,14 @@
 {
-	"name": "task",
-	"version": "1.0.0",
-	"bin": {
-		"task": "index.js"
-	}
+  "name": "task",
+  "version": "1.0.0",
+  "bin": {
+    "task": "index.js"
+  },
+  "description": "En este desafío, vamos a desarrollar un programa de línea de comandos (CLI) utilizando Node.js para la gestión de tareas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
